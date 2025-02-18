@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 // import './App.css'
+import WindowFrame from './Components/WindowFrame'
 
 function App() {
   const [theme, set_theme] = useState<'dark' | 'light'>('light');
@@ -16,7 +17,9 @@ function App() {
   });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-bg-slate-950 dark:text-gray-100 transition-colors duration-300">
+  <>
+    <WindowFrame/>
+    <div className="min-h-[calc(100vh-60px)] bg-white dark:bg-zinc-950 text-zinc-bg-slate-950 dark:text-gray-100 transition-colors duration-300">
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">Tailwind Dark Mode</h1>
         <button
@@ -32,6 +35,7 @@ function App() {
 
       </div>
     </div>
+  </>
   )
 }
 
